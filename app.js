@@ -6,7 +6,7 @@ const PORT = process.env.PORT;
 const mongoose = require('mongoose');
 const passport = require('passport');
 const userApi = require('./users/index.js');
-
+const contentApi = require('./contents/index.js');
 
 require('./config/passport');
 
@@ -27,6 +27,8 @@ mongoose.connect(process.env.DB_URL)
 
         app.use('/api/users', userApi);
         app.use(passport.initialize());
+
+        app.use('/api/contents', contentApi);
 
         app.get('/', function (req, res) {
             res.sendFile(path.join(__dirname, 'public/index.html'));

@@ -3,9 +3,10 @@ const {Schema} = mongoose;
 
 const contentSchema = new Schema({
     createdDate: {type:Date, default: new Date()},
-    text: {type: String},
-    images: [{type: String}],
-    videos: [{type: String}]
+    title: {type: String, required: true},
+    text: {type: String, required: true},
+    images: [{type: String, required: false}],
+    videos: [{type: String, required: false}]
 });
 
 const Content = mongoose.model('Content', contentSchema);
