@@ -16,3 +16,9 @@
 - DB_URL = mongodb+srv://root:<password>@cluster0.butom.mongodb.net/database_name?retryWrites=true&w=majority
 - PORT = 3000
 - JWT_SECRET = something_secret
+
+
+## TO publish on heroku
+- create an app on heroku and name it: `projetandroid`
+- heroku git:remote -a projetandroid
+- git push heroku main
